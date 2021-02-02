@@ -16,7 +16,6 @@ from    os                      import listdir, sep
 from    os.path                 import abspath, basename, isdir
 from    distutils.dir_util      import copy_tree
 import  shutil
-import  pudb
 import  sys
 import  time
 import  glob
@@ -175,13 +174,11 @@ class Lungct(ChrisApp):
         print(Gstr_title)
         print('Version: %s' % self.get_version())
 
-        if len(options.dir):
-            print("Copying tree %s..." % options.dir)
-            copy_tree(options.dir, options.outputdir)
-            sys.exit(0)
-        else:
-            print("No directory specified and no copy performed.")
-            sys.exit(1)
+        if not isdir(options.dir):
+            raise ValueError("No directory specified and no copy performed.")
+
+        print("Copying tree %s..." % options.dir)
+        copy_tree(options.dir, options.outputdir)
 
     def show_man_page(self):
         """

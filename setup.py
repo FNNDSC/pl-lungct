@@ -13,7 +13,7 @@ setup(
     author_email     = 'dev@babyMRI.org',
     url              = 'http://wiki',
     packages         = ['lungct', 'data'],
-    install_requires = ['chrisapp~=2.0.0', 'pudb'],
+    install_requires = ['chrisapp'],
     test_suite       = 'nose.collector',
     tests_require    = ['nose'],
     license          = 'MIT',
