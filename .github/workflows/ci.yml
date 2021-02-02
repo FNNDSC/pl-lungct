@@ -41,7 +41,9 @@ jobs:
           dock_image="${GITHUB_REPOSITORY,,}"  # to lower case
           # if build triggered by tag, use tag name
           tag="${git_tag:-latest}"
-          echo "::set-output name=tag::$dock_image:$tag"
+          dock_image=$dock_image:$tag
+          echo $dock_image
+          echo "::set-output name=tag::$dock_image"
 
       - uses: actions/checkout@v2
 
