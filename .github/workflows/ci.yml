@@ -91,6 +91,7 @@ jobs:
           readme-filepath: ./README.rst
 
       - name: Upload to ChRIS Store
+        if: ! endsWith(steps.determine.outputs.tag, ':latest')
         run: |
           dock_image=${{ steps.determine.outputs.tag }}
           docker pull localhost:5000/$dock_image
@@ -106,6 +107,13 @@ jobs:
               -F "descriptor_file=@$descriptor_file" \
               -F "public_repo=https://github.com/${{ github.repository }}"
           )
-          href="$(jq -r '.collection.items[0].href' <<< "$res")"
-          echo $href
-          echo "::set-output name=pluginurl::$href"
+          success=$?
+          if [ "$success" = "0" ]; then
+            href="$(jq -r '.collection.items[0].href' <<< "$res")"
+            echo $href
+            echo "::set-output name=pluginurl::$href"
+          else
+            echo "Failed to upload to ChRIS Store"
+            echo "$res"
+            exit $success
+          fi
