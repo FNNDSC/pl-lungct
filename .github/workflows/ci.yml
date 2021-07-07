@@ -13,13 +13,10 @@ name: ci
 
 on:
   push:
-    # we have to guess what the name of the default branch is
-    branches: [ master, main, trunk ]
+    branches: [ master ]
     tags: [ '**' ]
   pull_request:
-    branches: [ master, main, trunk ]
-  release:
-    types: [ created ]
+    branches: [ master ]
 
 jobs:
   test:
