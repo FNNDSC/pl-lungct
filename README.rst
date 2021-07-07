@@ -1,11 +1,15 @@
 pl-lungct
 ================================
 
-.. image:: https://travis-ci.org/FNNDSC/lungct.svg?branch=master
-    :target: https://travis-ci.org/FNNDSC/lungct
+.. image:: https://img.shields.io/docker/v/fnndsc/pl-lungct?sort=semver
+    :target: https://hub.docker.com/r/fnndsc/pl-lungct
 
-.. image:: https://img.shields.io/badge/python-3.8%2B-blue.svg
-    :target: https://github.com/FNNDSC/pl-lungCT/blob/master/setup.py
+.. image:: https://img.shields.io/github/license/fnndsc/pl-lungct
+    :target: https://github.com/FNNDSC/pl-lungct/blob/master/LICENSE
+
+.. image:: https://github.com/FNNDSC/pl-lungct/workflows/ci/badge.svg
+    :target: https://github.com/FNNDSC/pl-lungct/actions
+
 
 .. contents:: Table of Contents
 
