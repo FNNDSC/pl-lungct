@@ -6,7 +6,7 @@ with open(path.join(path.dirname(path.abspath(__file__)), 'README.rst')) as f:
 
 setup(
     name             = 'lungct',
-    version          = '1.0.2',
+    version          = '1.0.3',
     description      = 'This plugin simply copies a specific lung image of interest to its output directory.',
     long_description = readme,
     author           = 'FNNDSC',
